@@ -1,6 +1,6 @@
 import "./App.css";
-import UserProfile from "./components/UserProfile";
-import Counter from "./components/counter";
+import { Routes, Route } from "react-router-dom";
+import  { Home, About} from ""./pages/pages"
 import Clock from "./components/Clock";
 
 function App() {
@@ -11,6 +11,10 @@ function App() {
     <Clock />
     </div>
   )
+
+  NOtas: 
+  - Installing react-router-dom
+  - npm sass
 }
 
 export default App; 
