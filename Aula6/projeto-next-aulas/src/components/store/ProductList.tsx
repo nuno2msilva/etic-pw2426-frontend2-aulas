@@ -1,0 +1,50 @@
+"use client";
+
+/* eslint-disable @next/next/no-img-element */
+import { useDispatch, useSelector } from "react-redux";
+import { addItem } from "@/redux/slices/cartSlice";
+import { RootState, AppDispatch } from "@/redux/store";
+import { fetchProducts } from "@/redux/slices/productSlice";
+import { useEffect } from "react";
+
+interface Product {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+}
+
+const ProductList = () => {
+    const dispatch = useDispatch<AppDispatch>();
+    const products = useSelector((state: RootState) => state.products.products);
+    const status = useSelector((state: RootState) => state.products.status);
+    const error = useSelector((state: RootState) => state.products.error);
+
+    useEffect(() => {
+        dispatch(fetchProducts());
+    }, [dispatch]);
+
+    if (status === "loading") {
+        return <div>Loading...</div>;
+    }
+    if (status === "failed") {
+        return <div>Error: {error}</div>;
+    }
+
+    return (
+        <div className="grid grid-cols-3 gap-4">
+            {products.map((product: Product) => (
+                <div key={product.id} className="border-2 border-gray-300 rounded-md p-4">
+                    <h2 className="text-2xl font-bold">{product.name}</h2>
+                    <p className="text-gray-500">{product.description}</p>
+                    <p className="text-gray-500">{product.price} €</p>
+                    <img src={product.image} alt={product.name} className="w-full h-40 object-cover rounded-md" />
+                    <button className="bg-blue-500 text-white px-4 mt-2 py-2 rounded-md cursor-pointer hover:bg-blue-600" onClick={() => dispatch(addItem(product))}>Add to Cart</button>
+                </div>
+            ))}
+        </div>
+    );
+};
+
+export default ProductList;
