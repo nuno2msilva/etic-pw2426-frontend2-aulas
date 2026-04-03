@@ -1,0 +1,32 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Getting Started with React",
+            "content": "React is a powerful JavaScript library for building user interfaces. It allows you to create reusable components and manage state efficiently.",
+            "author": "John Doe",
+            "date": "2026-02-01"
+        },
+        {
+            "id": 2,
+            "title": "Understanding TypeScript",
+            "content": "TypeScript adds static typing to JavaScript, helping you catch errors early and write more maintainable code. It's a great choice for large projects.",
+            "author": "Jane Smith",
+            "date": "2026-02-02"
+        },
+        {
+            "id": 3,
+            "title": "SEO Best Practices",
+            "content": "Search Engine Optimization is crucial for web visibility. Focus on quality content, proper meta tags, and responsive design to improve rankings.",
+            "author": "Mike Johnson",
+            "date": "2026-02-03"
+        },
+        {
+            "id": 4,
+            "title": "Modern Frontend Development",
+            "content": "The frontend landscape is constantly evolving. Stay updated with the latest tools, frameworks, and best practices to build amazing user experiences.",
+            "author": "Sarah Williams",
+            "date": "2026-02-04"
+        }
+    ]
+}

@@ -6,7 +6,7 @@ import { useState } from "react";
 export const NameContext = createContext<{ name: string, setName: (name: string) => void }>({ name: "", setName: () => { } });
 
 export const NameProvider = ({ children }: { children: React.ReactNode }) => {
-    const [name, setName] = useState("Joao Brito");
+    const [name, setName] = useState("Nuno Silva");
     return (
         <NameContext.Provider value={{ name, setName }}>
             {children}
